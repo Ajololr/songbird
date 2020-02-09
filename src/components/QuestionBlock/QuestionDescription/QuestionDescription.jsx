@@ -5,9 +5,9 @@ import Player from './Player/Player'
 
 function QuestionDescription({birdName, birdImage, birdSound}) {
   return (
-    <div>
+    <div className='question-description'>
       <Image birdImage={birdImage}/>
-      <h3>{birdName}</h3>
+      <h3 className='bird-name'>{birdName}</h3>
       <Player birdSound={birdSound}/>
     </div>
   )
