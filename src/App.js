@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react';
 // import logo from './logo.svg';
-import Header from './components/Header/Header'
 import './App.css';
+import Header from './components/Header/Header'
+import QuestionBlock from './components/QuestionBlock/QuestionBlock';
 
 class App extends Component {
   state = {
@@ -12,6 +13,7 @@ class App extends Component {
     return (
       <Fragment>
         <Header scoreValue={this.state.score}/>
+        <QuestionBlock />
       </Fragment>
     );
   } 
