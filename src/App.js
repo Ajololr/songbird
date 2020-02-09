@@ -4,7 +4,8 @@ import './App.css';
 import Header from './components/Header/Header'
 import QuestionBlock from './components/QuestionBlock/QuestionBlock';
 import AnswerList from './components/AnswerList/AnswerList';
-import DescriptionBlock  from './components/DescriptionBlock/DescriptionBlock'
+import DescriptionBlock  from './components/DescriptionBlock/DescriptionBlock';
+import NextLevelButton  from './components/NextLevelButton/NextLevelButton'
 
 class App extends Component {
   state = {
@@ -18,7 +19,7 @@ class App extends Component {
         <QuestionBlock />
         <AnswerList />
         <DescriptionBlock birdElement={{name: 'Rerirf', latinName: 'asd', description: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'}}/>
-        {/* <NextLevelButton /> */}
+        <NextLevelButton />
       </Fragment>
     );
   } 
