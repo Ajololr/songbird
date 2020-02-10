@@ -1,9 +1,9 @@
 import React from 'react';
 import './NextLevelButton.scss'
 
-function NextLevelButton() {
+function NextLevelButton({clickFunction}) {
   return (
-    <button className='next-level-button'>Next level</button>
+    <button onClick={clickFunction} className='next-level-button'>Next level</button>
   )
 }
 
