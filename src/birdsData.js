@@ -1,6 +1,6 @@
 const birdsData = [
   {
-    themeName: 'Достаточно узнаваемые',
+    themeName: 'Узнаваемые',
     themeList: [
       {
         id: 0,
@@ -41,7 +41,7 @@ const birdsData = [
     ]
   },
   {
-    themeName: 'Лесные птицы',
+    themeName: 'Лесные',
     themeList: [
       {
         id: 0,
@@ -82,7 +82,7 @@ const birdsData = [
     ]
   },
   {
-    themeName: 'Красная книга Беларуси',
+    themeName: 'Красная книга',
     themeList: [
       {
         id: 0,
@@ -123,7 +123,7 @@ const birdsData = [
     ]
   },
   {
-    themeName: 'Экзотические птицы',
+    themeName: 'Экзотические',
     themeList: [
       {
         id: 0,
@@ -164,7 +164,7 @@ const birdsData = [
     ]
   },
   {
-    themeName: 'Морские птицы',
+    themeName: 'Морские',
     themeList: [
       {
         id: 0,
@@ -205,7 +205,7 @@ const birdsData = [
     ]
   },
   {
-    themeName: 'Домашние птицы',
+    themeName: 'Домашние',
     themeList: [
       {
         id: 0,

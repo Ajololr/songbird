@@ -4,8 +4,8 @@ import Image from  '../Image/Image';
 import Player from '../Player/Player';
 import img from '/RSSchool/songbird/src/assets/images/unknownBird.jpg';
 
-function DescriptionBlock({birdElement}) {
-  return (
+function DescriptionBlock({ birdElement }) {
+  return birdElement ? (
     <div className='description-block'>
       <Image birdImage={img}/>
       <h3 className='bird-name'>{birdElement.name}</h3>
@@ -13,7 +13,9 @@ function DescriptionBlock({birdElement}) {
       <Player birdSound={'asd'}/>
       <p className='description-text'>{birdElement.description}</p>
     </div>
-  )
+  ) : <div className='description-block'>
+    <p className='description-text'>Послушайте плеер. Выберите птицу из списка</p>
+  </div>
 }
 
 export default DescriptionBlock;
