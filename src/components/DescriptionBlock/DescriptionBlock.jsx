@@ -1,7 +1,7 @@
 import React from 'react';
 import './DescriptionBlock.scss';
-import Image from  '../QuestionBlock/QuestionDescription/Image/Image';
-import Player from '../QuestionBlock/QuestionDescription/Player/Player';
+import Image from  '../Image/Image';
+import Player from '../Player/Player';
 import img from '/RSSchool/songbird/src/assets/images/unknownBird.jpg';
 
 function DescriptionBlock({birdElement}) {

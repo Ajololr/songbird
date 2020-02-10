@@ -1,6 +1,6 @@
 import React from 'react';
-import Logo from './Logo/Logo'
-import Score from './Score/Score'
+import Logo from '../Logo/Logo'
+import Score from '../Score/Score'
 import './Header.scss'
 
 function Header({scoreValue}) {
