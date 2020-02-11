@@ -1,40 +1,48 @@
 import React, { Component, Fragment } from 'react';
 // import logo from './logo.svg';
 import './App.css';
+import birdsData from './birdsData';
 import Header from './components/Header/Header'
 import AnswerList from './components/AnswerList/AnswerList';
 import ThemesList from './components/ThemesList/ThemesList';
-import DescriptionBlock  from './components/DescriptionBlock/DescriptionBlock';
 import NextLevelButton  from './components/NextLevelButton/NextLevelButton';
-import birdsData from './birdsData';
+import DescriptionBlock  from './components/DescriptionBlock/DescriptionBlock';
 import QuestionDescription from './components/QuestionDescription/QuestionDescription';
 
 class App extends Component {
   state = {
     score: 0,
     round: 0,
-    secretBird: null,
+    secretBird: this.setRandomBirdIndex(),
     selectedBird: null,
     isRoundFinished: false,
-    isGameFinished: false
+    isGameFinished: false,
+    secretSong: null,
+    selectedSong: null
   }
 
-  getRandomBirdIndex(count) {
-    this.setState((state) => ({
-      secretBird: Math.floor(Math.random() * count)
-    })); 
+  constructor(props) {
+    super(props);
+    this.setSecretBirdSound();
   }
 
   startNewGame = () => {
     this.setState({
       score: 0,
       round: 0,
+      selectedBird: null,
       isRoundFinished: false,
-      isGameFinished: false
+      isGameFinished: false,
+      selectedSong: null
     });
+    this.setRandomBirdIndex();
   }
 
-  increaseScoreBy(value) {
+  setRandomBirdIndex() {
+    return Math.floor(Math.random() * 7);
+  }
+
+  increaseScoreBy = (value) => {
     this.setState((state, value) => ({
       score: state.counter + value
     }));
@@ -43,8 +51,32 @@ class App extends Component {
   setNextRound = () => {
     this.setState((state) => ({
       round: state.round + 1,
-      isFinished: state.round === birdsData.length
+      selectedBird: null,
+      isGameFinished: state.round === birdsData.length
     }));
+  }
+
+  setSecretBirdSound() {
+    const latinName = birdsData[this.state.round].themeList[this.state.secretBird].latinName;
+    const proxy = 'https://cors-anywhere.herokuapp.com/';
+    fetch(`${proxy}https://www.xeno-canto.org/api/2/recordings?query=${latinName}`)
+      .then(response => response.json())
+      .then(data => {
+        this.setState((state) => ({
+          secretSong: data.recordings[0].file
+        }));
+      })
+  }
+
+  setSelectedBirdSound = (latinName) => {
+    const proxy = 'https://cors-anywhere.herokuapp.com/';
+    fetch(`${proxy}https://www.xeno-canto.org/api/2/recordings?query=${latinName}`)
+      .then(response => response.json())
+      .then(data => {
+        this.setState((state) => ({
+          selectedSong: data.recordings[0].file
+        }));
+      })
   }
 
   render() {
@@ -52,8 +84,8 @@ class App extends Component {
       <Fragment>
         <Header scoreValue={this.state.score}/>
         <ThemesList round={this.state.round} birdsData={birdsData}/>
-        <QuestionDescription isRoundFinished={this.state.isRoundFinished} birdElement={birdsData[this.state.round].themeList[this.state.secretBird]}/>
-        <AnswerList answersArray={birdsData[this.state.round].themeList}/>
+        <QuestionDescription isRoundFinished={this.state.isRoundFinished} birdElement={birdsData[this.state.round].themeList[this.state.secretBird]} secretSong={this.state.secretSong}/>
+        <AnswerList answersArray={birdsData[this.state.round].themeList} answer={this.state.secretBird}/>
         <DescriptionBlock birdElement={birdsData[this.state.round].themeList[this.state.selectedBird]}/>
         <NextLevelButton clickFunction={this.state.isGameFinished ? this.startNewGame : this.setNextRound} enabled={this.state.isRoundFinished}/>
       </Fragment>

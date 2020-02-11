@@ -1,7 +1,7 @@
 import React from 'react';
 import './Image.scss'
 
-function Image({birdImage}) {
+function Image({ birdImage }) {
   return birdImage ? (
     <img className={'bird-image'} src={birdImage} alt=''/>
   ) : null;
