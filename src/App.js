@@ -70,7 +70,7 @@ class App extends Component {
         roundScore: 5,
         selectedBird: null,
         secretBird: this.setRandomBirdIndex(),
-        isRoundFinished: false,
+        isRoundFinished: state.round === 5,
         isGameFinished: state.round === 5,
         secretSong: null,
         selectedSong: null,
@@ -146,7 +146,7 @@ class App extends Component {
         <QuestionDescription isRoundFinished={this.state.isRoundFinished} birdElement={!this.state.isGameFinished ? birdsData[this.state.round].themeList[this.state.secretBird] : null} secretSong={this.state.secretSong} isFinished={this.state.isGameFinished}/>
         <AnswerList answersArray={!this.state.isGameFinished ? birdsData[this.state.round].themeList : null} answer={this.state.secretBird} checkAnswer={this.checkAnswer} isFinished={this.state.isGameFinished}/>
         <DescriptionBlock birdElement={!this.state.isGameFinished ? birdsData[this.state.round].themeList[this.state.selectedBird] : null} selectedSong={this.state.selectedSong} isFinished={this.state.isGameFinished}/>
-        <NextLevelButton clickFunction={this.state.isGameFinished ? this.startNewGame : this.setNextRound} enabled={this.state.isRoundFinished || this.setState.isGameFinished}/>
+        <NextLevelButton clickFunction={this.state.isGameFinished ? this.startNewGame : this.setNextRound} enabled={this.state.isRoundFinished}/>
       </Fragment>
     );
   } 
