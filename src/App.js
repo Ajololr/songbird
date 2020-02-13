@@ -3,7 +3,6 @@ import React, { Component, Fragment } from 'react';
 import './App.css';
 import Header from './components/Header/Header'
 import QuestionBlock from './components/QuestionBlock/QuestionBlock';
-import AnswerList from './components/AnswerList/AnswerList'
 
 class App extends Component {
   state = {
@@ -15,9 +14,6 @@ class App extends Component {
       <Fragment>
         <Header scoreValue={this.state.score}/>
         <QuestionBlock />
-        <AnswerList />
-        {/* <DescriptionBlock />
-        <NextLevelButton /> */}
       </Fragment>
     );
   } 
