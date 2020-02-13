@@ -5,7 +5,7 @@ import './Header.scss'
 
 function Header({scoreValue}) {
   return (
-    <header className='header'>
+    <header className='cont'>
       <Logo />
       <Score scoreValue={scoreValue}/>
     </header>
