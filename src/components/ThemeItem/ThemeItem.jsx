@@ -1,9 +1,9 @@
 import React from 'react';
 import './ThemeItem.scss'
 
-function ThemeItem({themeName, isActive}) {
+function ThemeItem({themeName}) {
   return (
-    <li className={'theme-item' + (isActive ? ' active-item' : '')}>{themeName}</li>
+    <li className={'theme-item'}>{themeName}</li>
   )
 }
 
