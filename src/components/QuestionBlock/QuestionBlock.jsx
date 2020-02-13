@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
-import ThemesList from '../ThemesList/ThemesList'
-import QuestionDescription from '../QuestionDescription/QuestionDescription';
+import ThemesList from './ThemesList/ThemesList'
+import QuestionDescription from './QuestionDescription/QuestionDescription';
 import img from '/RSSchool/songbird/src/assets/images/unknownBird.jpg'
 
 function QuestionBlock() {

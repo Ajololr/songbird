@@ -1,7 +1,7 @@
 import React from 'react';
 import './QuestionDescription.scss'
-import Image from '../Image/Image'
-import Player from '../Player/Player'
+import Image from './Image/Image'
+import Player from './Player/Player'
 
 function QuestionDescription({birdName, birdImage, birdSound}) {
   return (
