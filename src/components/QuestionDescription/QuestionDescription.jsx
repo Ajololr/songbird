@@ -4,11 +4,10 @@ import Image from '../Image/Image'
 import Player from '../Player/Player'
 import secretBird from '/RSSchool/songbird/src/assets/images/unknownBird.jpg'
 
-function QuestionDescription({ isRoundFinished, birdElement, secretSong, isFinished }) {
-  if (isFinished) return null;
+function QuestionDescription({ isRoundFinished, birdElement, secretSong }) {
   return isRoundFinished ? (
     <div className='question-description'>
-      <Image birdImage={birdElement.image}/>
+      <Image birdImage={secretBird}/>
       <h3 className='bird-name'>{birdElement.name}</h3>
       <Player birdSound={secretSong}/>
     </div>
