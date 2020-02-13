@@ -1,6 +1,5 @@
 .themes-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+  display: flex;
   list-style: none;
   width: 100%;
   padding: 0;

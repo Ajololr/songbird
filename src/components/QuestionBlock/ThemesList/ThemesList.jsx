@@ -8,9 +8,6 @@ function ThemesList() {
       <ThemeItem themeName={'Разминка'}/>
       <ThemeItem themeName={'Разминка'}/>
       <ThemeItem themeName={'Разминка'}/>
-      <ThemeItem themeName={'Разминка'}/>
-      <ThemeItem themeName={'Разминка'}/>
-      <ThemeItem themeName={'Разминка'}/>
     </ul>
   )
 }
