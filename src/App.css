@@ -3,6 +3,10 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
